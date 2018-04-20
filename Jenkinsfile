@@ -11,9 +11,11 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 		 
-		sh 'sudo su'
+		app = sh 'sudo su'
 		 
-		app = sudo docker.build("bhatiarahul1993/docker")
+		app.inside {
+				docker.build("bhatiarahul1993/docker")
+		}
     }
 
     stage('Test image') {
