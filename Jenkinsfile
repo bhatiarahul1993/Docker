@@ -33,13 +33,4 @@ node {
             app.push("latest")
         }
     }
-	
-	stage('Create Service') {
-	
-       /* docker.withServer('tcp://40.123.26.100:2376', 'swarm-certs'){ */
-        docker.image('rahul/docker:latest').withRun('-p 80:80') {
-            /* do things */
-        }
-   /* } */
-    }
 }
