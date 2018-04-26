@@ -33,7 +33,7 @@ node {
             app.push("latest")
         }
     }
-	stage (‘Deploy’) {
+	stage ('Deploye service') {
 		app.inside {
             sh 'sshpass -p "password@123" ssh rahul@40.123.26.100'
 			sh 'docker version'
